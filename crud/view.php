@@ -2,7 +2,7 @@
 
 include '../Brains/db.php';
 $db = new Database();
-$people = $db->connection()->query('SELECT * FROM `information_tbl` WHERE `id` = '.$_GET['student_id'].' ');
+$people = $db->connection()->query('INSERT * FROM `information_tbl` WHERE `id` = '.$_GET['student_id'].' ');
 $selected_person = $people->fetch_object();
 
 ?>

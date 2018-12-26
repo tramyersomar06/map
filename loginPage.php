@@ -17,9 +17,9 @@
 			margin-top: 5%;
 		}
 		form{
-			width: 30%;
+			width: 35%;
 			margin: auto;, auto, auto, auto;
-			border-color: 
+			 
 		}
 
 	</style>
@@ -30,7 +30,8 @@
 		<label>Password:</label><input type="password" class="form-control" name="password" placeholder="Enter Password">
 		<br>
 		<input type="submit" class="btn btn-primary" name="login" value="Login">
-        <a align="right" class="nav-link" href="http://localhost/map/crud/signup.php">Create Account?<span class="sr-only">(current)</span></a>
+		<a align="right" class="nav-link" href="../Map/forgotpass.php".php>Forgot Password?<span class="sr-only">(current)</span></a>
+        <a align="right" class="nav-link" href=../Map/register.php>Create Account?<span class="sr-only">(current)</span></a>
 	</form>
 </body>
 </html>

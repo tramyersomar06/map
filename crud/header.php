@@ -16,7 +16,7 @@
         <a class="nav-link" href="http://localhost/Map/crud/create.php">Add Data <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="http://localhost/Map/crud/informationPage.php">Households<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="http://localhost/Map/crud/informationPage.php">Records<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="../loginController.php?logout=1">Logout<span class="sr-only">(current)</span></a>
