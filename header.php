@@ -11,9 +11,9 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
        <a class="nav-link" href="http://localhost/Map/homePage.php">LDRRM <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <!-- <li class="nav-item active">
         <a class="nav-link" href="http://localhost/Map/crud/create.php">Add Data <span class="sr-only">(current)</span></a>
-      </li>
+      </li> -->
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost/Map/crud/informationPage.php">Records<span class="sr-only">(current)</span></a>
       </li>

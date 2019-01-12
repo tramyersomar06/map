@@ -10,7 +10,7 @@
 	
 	<style type="text/css">
 		body{
-			background: url(HTML/map.jpeg);
+			background: url(HTML/pexels-photo-220201.jpeg);
 			height: 100vh;
 			background-size: cover;
 			background-position: center;
@@ -31,7 +31,7 @@
 		<br>
 		<input type="submit" class="btn btn-primary" name="login" value="Login">
 		<a align="right" class="nav-link" href="../Map/forgotpass.php".php>Forgot Password?<span class="sr-only">(current)</span></a>
-        <a align="right" class="nav-link" href=../Map/register.php>Create Account?<span class="sr-only">(current)</span></a>
+        
 	</form>
 </body>
 </html>

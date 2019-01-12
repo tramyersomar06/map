@@ -3,7 +3,7 @@
 include '../Brains/db.php'; 
 $db = new Database();
 
-$people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `table 5` ON `table 5`.`barangay_id` = `information_tbl`.`address`');
+$people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barangay` ON `barangay`.`barangay_id` = `information_tbl`.`address`');
 
 
 // echo "<pre>";
@@ -16,6 +16,7 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `table 
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../design/css/bootstrap.min.css">
+	
 
 <style type="text/css">
 	.manageData {
@@ -38,40 +39,44 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `table 
 <body>
 
 	<?php 
-	include 'header.php';
+	require_once 'header.php';
 	?>
-<form style="margin-top: auto;"><br>
+<form >
 
-</div><br>
+</div>
 <div>
-	<div class="container">
-	<div class="table-responsive text-center">
-	<table class="table table-bordered">
-		<thead>
-			<th>First Name</th>
-			<th>Middle Name</th>
-			<th>Last Name</th>
-			<th>Address</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
+	
+	<div class="container-fluid" style="width: 90%">
+	
+	<div class="table-responsive">
+	<table  class="table table-bordered"><br>
+		<div style="text-align: center;"><h2> Data Information </h2></div>
+		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">Add Data</a>
+		<a class="btn btn-primary" href="../houses/createHouses.php" style="margin-bottom: 1%;margin-left: 1%">Check Data</a>
+		<thead bgcolor = "#BCD6F2">
+			<th style = " width: 15%">First Name</th>
+			<th style = " width: 20%">Middle Name</th>
+			<th style = " width: 15%">Last Name</th>
+			<th style = " width: 15%">Place</th>
+			<th style = " width: 10%"></th>
+			<th style = " width: 10%"></th>
+			<th style = " width: 10%"></th>
+			
 		</thead>
-		<tbody>
+		<tbody style="text-align: center;">
 			<?php
 			// echo "<pre>";
 			// var_dump($rows = $people->fetch_object());
 			// echo "</pre>";
 			while ($rows = $people->fetch_object()) {
-				echo "<tr>";
+				
 				echo "<td>". $rows->firstname ."</td>";
 				echo "<td>". $rows->middlename ."</td>";
 				echo "<td>". $rows->lastname ."</td>";
 				echo "<td>". $rows->barangay ."</td>";
-				echo "<td><a class=\"btn btn-primary\" href=\"view.php?student_id={$rows->id}\">View</a></td>";
-				echo "<td><a class=\"btn btn-secondary\">Edit</a></td>";
-				echo "<td><a class=\"btn btn-secondary\">Update</a></td>";
-				echo "<td><a class=\"btn btn-danger\">Delete</a></td>";
+				echo "<td><a class=\"btn btn-success\" href=\"view.php?student_id={$rows->id}\">View</a></td>";
+				echo "<td><a class=\"btn btn-info\" href=\"update.php?student_id{rows->id}\">Edit</a></td>";
+				echo "<td><a class=\"btn btn-danger\" href=\"crudController.php?student_id={$rows->id}\">Delete</a></td>";
 				echo "</tr>";
 			}
 			?>
