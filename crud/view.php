@@ -15,16 +15,19 @@ $selected_person = $people->fetch_object();
 	<link rel="stylesheet" type="text/css" href="../design/css/bootstrap.min.css">
 </head>
 <body>
+
 	<?php 
 	include 'header.php';
 	?>
-	
+	<br>
+	<center><div style="text-align: center;"><h2> HouseHold </h2></div></center>
+	<div class="container-fluid" style="width: 90%">
 
-	<div class="container">
-		<div><br><br>
-			<h3><small>Head: </small><?php echo $selected_person->lastname.' '.$selected_person->firstname.' '.$selected_person->middlename; ?></h3>
+		<div><br>
+			<h3><small>Respondent: </small><?php echo $selected_person->lastname.' '.$selected_person->firstname.' '.$selected_person->middlename; ?></h3>
 		</div>
-	</div>
 
+	</div>
+</div>
 </body>
 </html>
