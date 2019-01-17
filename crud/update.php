@@ -23,6 +23,7 @@
           if($toBeUpdate = $result->fetch_object()){
               echo '<form id="myform" action="updateController.php" method = "POST">
                       <table cellspacing="0" cellpadding="0"><br><br>
+                        <input type="hidden" name="student_id" value="'.$id.'"/>
                         <tr>
                           <div style="">
                             <th>First Name:</th>

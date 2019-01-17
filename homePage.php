@@ -5,7 +5,7 @@
 </head>
 <body>
     <?php 
-            echo "HELLO LDRRM ";
+            echo "LDRRM ";
      ?>
 </body>
 </html>
