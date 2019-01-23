@@ -50,10 +50,10 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barang
 	
 	<div class="table-responsive">
 	<table  class="table table-bordered"><br>
-		<div style="text-align: center;"><h2> Data Information </h2></div>
+		<div style="text-align: center;"><h2> Data Information </h2></div><br>
 		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">Add Data</a>
 		<a class="btn btn-primary" href="../houses/createHouses.php" style="margin-bottom: 1%;margin-left: 1%">Household</a>
-		    	</div>
+	</div>
 
 		<thead bgcolor = "#BCD6F2">
 			<th style = " width: 15%">First Name</th>
@@ -82,8 +82,7 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barang
 				echo "</tr>";
 			}
 			?>
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit ">Search</button> 
- 		<input class="form-control mr-sm-2" type="search" placeholder="Search Place" style="width: 30%;margin-left: 70%" aria-label="Search ">
+			
       	
 
 		</tbody>

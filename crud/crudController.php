@@ -135,7 +135,6 @@ if (isset($_POST['_firstname']) || isset($_POST['_middlename']) || isset($_POST[
 	}else {
 		$add = "INSERT INTO information_tbl (firstname, middlename, lastname, address, lat, longitude) VALUES ('{$create_firstname}', '{$create_middlename}', '{$crreate_lastname}', '{$finalAddress}', {$create_latitude}, {$create_longitude} )";
 		$insertThis = $dtbs->connection()->query($add);
-		var_dump($insertThis);
 		header("location:informationPage.php");
 	}
 }

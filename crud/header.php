@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#" style="margin: auto;"><h2>Local Disaster Risk Reduction Management</h2></a>
 </nav>
@@ -22,12 +20,10 @@
       <li class="nav-item active">
         <a class="nav-link" href="../loginController.php?logout=1">Logout<span class="sr-only">(current)</span></a>
       </li>
-
-      
-      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-     
+         <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Place" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit ">Search</button>
     </form>
   </div>
 </nav>

@@ -24,7 +24,7 @@ $selected_person = $people->fetch_object();
 	<div class="container-fluid" style="width: 90%">
 
 		<div><br>
-			<h3><small>Respondent: </small><?php echo $selected_person->lastname.' '.$selected_person->firstname.' '.$selected_person->middlename; ?></h3>
+			<h3><small>Head: </small><?php echo $selected_person->lastname.' '.$selected_person->firstname.' '.$selected_person->middlename; ?></h3>
 		</div>
 
 	</div>

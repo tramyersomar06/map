@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -7,17 +7,18 @@
 	
 </head>
 <body>
+
 <?php
-include 'header.php';
-include 'crudController.php';
+		include 'header.php';
+		include 'crudController.php';
 ?>
 
+	<form id="myform" action="create.php" method = "POST"  enctype = "multipart/form-data"><br>
+	<input type = "file" name = "file" style = "margin-left: 50%">
 
-<fieldset>
-	<form id="myform" action="create.php" method = "POST">
-		<table cellspacing="0" cellpadding="0"><br><br>
+	<table cellspacing="0" cellpadding="0"><br><br>
 			<tr>
-				<div style="">
+				<div>
 					<th>First Name:</th>
 					<td><input type="text" class="form-control" name="_firstname" placeholder="First name"></td>
 				</div>
@@ -88,12 +89,13 @@ include 'crudController.php';
 				<th>Longitude:</th>
 				<td><input type="text" class="form-control" name="_longitude" placeholder="Longitude"></td>
 			</tr>
-					
+			
 		</table><br>
 		<td><button type="submit" class="btn btn-primary" style="margin-right: 7%;margin-left: 9%">save</button></td>
 				<td><a href="../crud/informationPage.php"><button type = "button" class="btn btn-secondary">Cancel</button></a></td>
 	</form>
-</fieldset>
+	</form>
+
 
 </body>
 </html>
