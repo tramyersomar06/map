@@ -11,11 +11,7 @@ include '../crud/header.php';
 
 ?>
 
-<!-- Create House Hold -->
-<!-- <div class="container">
-	<br><br>
-	<a class="btn btn-primary" href="createHouses.php">CREATE HOUSEHOLD</a>
-</div> -->
+<iframe src="https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393" heigth="100" width="100" frameborder="1"></iframe>
 
 </body>
 </html>

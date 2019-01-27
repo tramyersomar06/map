@@ -38,7 +38,7 @@ include 'houseHoldController.php';
     				}
     				echo "</select>";
     			}else{
-    				echo '<input autocomplete="off" type="text" class="form-control" name="search_name" placeholder="Name/ Search Name">';
+    				echo '<input autocomplete="off" type="text" class="form-control" name="search_name" placeholder="Search Name">';
     			}
     			?>
 
