@@ -11,7 +11,7 @@
 	<style type = "text/css">
 	body{
 
-		background-image:url("HTML/pexels-photo-1046397.jpeg");
+		background-image:url("HTML/images.jpg");
 		background-size: cover;
 		background-attachment: fixed;
 	}
@@ -26,6 +26,10 @@
 		font-size: 25px;
 		color: black;
 	}
+	{
+		
+	}
+
 	</style>
 
 </head>

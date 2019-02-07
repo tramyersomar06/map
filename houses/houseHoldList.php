@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../design/css/bootstrap.min.css">
     <title>Document</title>
+
+    <style type = "text/css">
+        body{
+
+background-image:url("../HTML/city.jpg");
+background-size: cover;
+background-attachment: fixed;
+}
+    </style>
 </head>
 <body>
 <?php
@@ -19,8 +28,13 @@
             <th>Household No.</th>
             <th>Respondent</th>
             <th>Place</th>
+            <th></th>
            
             <a class="btn btn-primary" id="" href="http://localhost/Map/houses/createHouses.php" style="margin-bottom: 1%">Add Data</a>
+		    <a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">CREATE</a>
+		
+	
+
             <th></th>
         </thead>
         <tbody>
@@ -33,6 +47,7 @@
                 echo "<td>{$result->full_name}</td>";
                 echo "<td>{$result->barangay}</td>";
                 echo "<td><a href=\"houseHoldLocation.php?id={$result->id}\" class=\"btn btn-secondary\">Details</a></td>";
+                echo "<td><a href=\"houseHoldController.php?delete={$result->slug}\" class=\"btn btn-danger\">Delete</a></td>";
                 echo "</tr>";
             }
         ?>

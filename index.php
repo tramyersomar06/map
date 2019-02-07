@@ -13,19 +13,25 @@ if (!isset($_SESSION['hash'])) {
 	<link rel="stylesheet" type="text/css" href="design/css/bootstrap.min.css">
 	<script type="text/javascript" src="design/js/bootstrap.js"></script>
 	<script type="text/javascript" src="design/js/bootstrap.min.js"></script>
-	 <!-- Required meta tags -->
-	 <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="design/css/bootstrap.min.css">
-      <style type = "text/css">
-        .header{
-		            position:Fixed;
-	}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="design/css/bootstrap.min.css">
+    <style type = "text/css">
+    </style>
 
-      </style>
+<style type = "text/css">
+
+body{
+
+background-image:url("HTML/rescue.jpeg");
+background-size: cover;
+background-attachment: fixed;
+}
+
+</style>
+
 </head>
 <body>
 
@@ -37,7 +43,7 @@ if (!isset($_SESSION['hash'])) {
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active" style = "height:484px">
+    <div class="carousel-item active" style = "height:470px" >
       <img src="HTML/pexels-photo-220201.jpeg" class="d-block w-100" alt="first slide">
       <div class="carousel-caption d-none d-md-block">
     <h5>hahahaha</h5>
@@ -45,14 +51,14 @@ if (!isset($_SESSION['hash'])) {
     </div>
     </div>
     <div class="carousel-item" >
-      <img src="HTML/pexels-photo-313782.jpeg" style = "height:484px" class="d-block w-100" alt="second slide">
+      <img src="HTML/pexels-photo-313782.jpeg" style = "height:470px" class="d-block w-100" alt="second slide">
       <div class="carousel-caption d-none d-md-block">
     <h5>hohohoho</h5>
     <p>hehehe</p>
     </div>
     </div>
     <div class="carousel-item">
-      <img src="HTML/pexels-photo-757239.jpeg" style = "height:484px"  class="d-block w-100" alt="third slide">
+      <img src="HTML/pexels-photo-757239.jpeg" style = "height:470px"  class="d-block w-100" alt="third slide">
       <div class="carousel-caption d-none d-md-block">
     <h5>hihihihi</h5>
     <p>hehehe</p>

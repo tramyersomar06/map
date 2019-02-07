@@ -48,8 +48,8 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barang
 	
 	<div class="table-responsive">
 	<table  class="table table-bordered"><br>
-		<div style="text-align: center;"><h2> Data Information </h2></div><br>
-		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">Add Data</a>
+		<div style="text-align: center;"><h2></h2></div><br>
+		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">CREATE</a>
 		
 	</div>
 

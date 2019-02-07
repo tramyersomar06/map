@@ -4,6 +4,16 @@ include '../Brains/numComplete.php';
 $db = new Database();
 $comp = new NumComp();
 
+if(isset($_GET['delete'])){
+	$deleteThis = $_GET['delete'];
+	$query = "DELETE FROM `house` WHERE `slug` = '{$deleteThis}'";
+	$smallerDelete = strtolower($deleteThis);
+	$query2 = "DROP TABLE `{$smallerDelete}`";
+	if($db->connection()->query($query) && $db->connection()->query($query2)) {
+		header('location:houseHoldList.php');
+	}
+}
+
 if(isset($_POST['Longitude']) && isset($_POST['Latitude']) && isset($_POST['brgy'])) {
 	
 }
@@ -153,4 +163,10 @@ if(isset($_POST['create'])){
 	echo $createHouseHoldTable;
 	$db->connection()->query($createHouseHoldTable);
 	}
+
+
+
+	// if(isset()){
+	// 	echo "aaa";
+	// }
 }

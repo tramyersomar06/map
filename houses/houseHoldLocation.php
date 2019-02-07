@@ -11,10 +11,11 @@
     <style>
 
       #map {
-        height: 60%;
-        width: 65%;
+        height: 55%;
+        width: 45%;
         margin: auto;
-        margin-top: 5%;
+        margin-top: 3%;
+        margin-left: 45%;
       }
       html, body {
         height: 100%;
@@ -30,7 +31,14 @@
     include '../crud/header.php';
     include '../Brains/db.php';
 $db = new Database();
+
 ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"></div>
+        </div>
+    </div>
+
     <div id="map"></div>
         <?php
             $query = "SELECT * FROM house WHERE id = {$_GET['id']}";
@@ -38,6 +46,8 @@ $db = new Database();
             if($map = $result->fetch_object()){
                 $long = $map->longitude;
                 $lat = $map->latitude;
+                $house = $map->slug;
+                
                 echo "<script>
                 var map;
                 function initMap() {
@@ -53,8 +63,21 @@ $db = new Database();
                 }
               </script>";
                 
-            }
         ?>
+
+        <a href="#" class="btn btn-secondary">Edit Members</a>
+        <div class="float-left">
+            <h3 class="h3">Family Members</h3>
+            <?php
+            $query2 = "SELECT * FROM `{$house}` JOIN `people` ON `{$house}`.`members` = `people`.`people_id`";
+            $result2 = $db->connection()->query($query2);
+                while($members = $result2->fetch_object()){
+                    echo $members->full_name,'<br>';
+                }
+            }
+            ?>
+        </div>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVwmJw-KmDmkNjYNuAfBheDGDZuLwA1HY
     &callback=initMap"
     async defer></script>
