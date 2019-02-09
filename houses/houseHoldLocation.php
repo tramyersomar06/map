@@ -65,7 +65,7 @@ $db = new Database();
                 
         ?>
 
-        <a href="#" class="btn btn-secondary">Edit Members</a>
+        <a href="http://localhost/Map/houses/familyMem.php" class="btn btn-secondary">Edit</a>
         <div class="float-left">
             <h3 class="h3">Family Members</h3>
             <?php

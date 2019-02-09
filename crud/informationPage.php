@@ -3,7 +3,7 @@ session_start();
 include '../Brains/db.php'; 
 $db = new Database();
 
-$people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barangay` ON `barangay`.`barangay_id` = `information_tbl`.`address`');
+$people = $db->connection()->query('SELECT * FROM `people` LIMIT 10');
 
 
 ?>
@@ -49,7 +49,7 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barang
 	<div class="table-responsive">
 	<table  class="table table-bordered"><br>
 		<div style="text-align: center;"><h2></h2></div><br>
-		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">CREATE</a>
+		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">insert</a>
 		
 	</div>
 
@@ -59,6 +59,8 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barang
 			<th style = " width: 15%">Last Name</th>
 			<th style = " width: 10%"></th>
 			<th style = " width: 10%"></th>
+			<th style = " width: 10%"></th>
+
 			
 			
 		</thead>
@@ -67,12 +69,13 @@ $people = $db->connection()->query('SELECT * FROM `information_tbl` JOIN `barang
 			
 			while ($rows = $people->fetch_object()) {
 				
-				echo "<td>". $rows->firstname ."</td>";
-				echo "<td>". $rows->middlename ."</td>";
-				echo "<td>". $rows->lastname ."</td>";
-				echo "<td><a class=\"btn btn-success\" href=\"view.php?student_id={$rows->id}\">View</a></td>";
-				echo "<td><a class=\"btn btn-info\" href=\"update.php?student_id={$rows->id}\">Edit</a></td>";
-				echo "<td><a class=\"btn btn-danger\" href=\"crudController.php?student_id={$rows->id}\">Delete</a></td>";
+				echo "<td>". $rows->f_name ."</td>";
+				echo "<td>". $rows->m_name ."</td>";
+				echo "<td>". $rows->l_name ."</td>";
+				
+				echo "<td><a class=\"btn btn-success\" href=\"view.php?student_id={$rows->people_id}\">View</a></td>";
+				echo "<td><a class=\"btn btn-info\" href=\"update.php?student_id={$rows->people_id}\">Edit</a></td>";
+				echo "<td><a class=\"btn btn-danger\" href=\"crudController.php?student_id={$rows->people_id}\">Delete</a></td>";
 				echo "</tr>";
 			}
 			?>

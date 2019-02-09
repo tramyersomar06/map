@@ -17,7 +17,7 @@
 
         if(isset($_GET['student_id'])){
           $id = $_GET['student_id'];
-          $query = "SELECT * FROM `information_tbl` WHERE id = {$id}";
+          $query = "SELECT * FROM `people` WHERE people_id = {$id}";
         $result = $ddbb->connection()->query($query);
 
           if($toBeUpdate = $result->fetch_object()){
@@ -27,24 +27,24 @@
                         <tr>
                           <div style="">
                             <th>First Name:</th>
-                            <td><input type="text" class="form-control" name="_firstname" placeholder="First name" value="'.$toBeUpdate->firstname.'"></td>
+                            <td><input type="text" class="form-control" name="_firstname" placeholder="First name" value="'.$toBeUpdate->f_name.'"></td>
                           </div>
                         </tr>
                         <tr>
                           <th>Middle Name:</th>
-                          <td><input type="text" class="form-control" name="_middlename" placeholder="Middle name" value="'.$toBeUpdate->middlename.'"></td>
+                          <td><input type="text" class="form-control" name="_middlename" placeholder="Middle name" value="'.$toBeUpdate->m_name.'"></td>
                         </tr>
                         <tr>
                           <th>Last Name:</th>
-                          <td><input type="text" class="form-control" name="_lastname" placeholder="Last name" value="'.$toBeUpdate->lastname.'"></td>
+                          <td><input type="text" class="form-control" name="_lastname" placeholder="Last name" value="'.$toBeUpdate->l_name.'"></td>
                         </tr>
                         
                       </table><br>
                       <td><button type="submit" class="btn btn-primary" style="margin-right: 7%;margin-left: 9%">UPDATE</button></td>
                           <td><a href="../crud/informationPage.php"><button type = "button" class="btn btn-secondary">Cancel</button></a></td>
                     </form>';
-                    $_SESSION['id'] = $toBeUpdate->id;
-                    echo $_SESSION['id'];
+                    // $_SESSION['id'] = $toBeUpdate->id;
+                    // echo $_SESSION['id'];
         }
         }
 

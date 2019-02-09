@@ -8,8 +8,9 @@ $firstname = $_POST['_firstname'];
 $middlename = $_POST['_middlename'];
 $lastname = $_POST['_lastname'];
 
+
     
-    $query = "UPDATE `information_tbl` SET `firstname`='{$firstname}',`middlename`='{$middlename}',`lastname`='{$lastname}' WHERE `id`={$id}";
+    $query = "UPDATE `people` SET `f_name`='{$firstname}',`m_name`='{$middlename}',`l_name`='{$lastname}' WHERE `people_id`={$id}";
 
 if ($db->connection()->query($query)) {
     echo '<script> alert("record updated!") </script>';

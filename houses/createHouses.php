@@ -57,10 +57,10 @@ include 'houseHoldController.php';
       			
     		</div>
     		<div class="col"><br>
-      			<center><input type="submit" name="hahaha" class="btn btn-primary" style="margin-top: 50%;margin-right: 70" value="SEARCH"></center>
+      			<center><input type="submit" name="hahaha" class="btn btn-primary" value="SEARCH"></center>
     		</div>
   		</div>
-		<input type="submit" id="search" class="btn btn-primary" style="margin-top: 3%" name="create" value="CREATE">
+		<input type="submit" id="search" class="btn btn-primary" style="margin-top: 3%" name="create" value="Save">
 	</form>
 </div>
 </body>

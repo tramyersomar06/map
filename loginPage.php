@@ -5,10 +5,15 @@
 	<title>Map System</title>
 	<link rel="stylesheet" type="text/css"  href="design/css/bootstrap.min.css">
 	
+</head>
+
+<body>
+
+
 	<style type="text/css">
 		body{
-			background: url(download .jpg);
-		
+			background: url(HTML/bbb.jpg);
+			height: 100vh;
 			background-size: cover;
 			background-position: center;
 		
@@ -20,15 +25,8 @@
 			margin-right: 60%;
 		}
 	
-	</style>
-
-</head>
-
-<body>
-
-
-	<br><br>
-	<form autocomplete="off" action="loginPage.php" class = "" method="POST">
+	</style><br><br>
+	<form autocomplete="off" action="loginPage.php" class = "jumbotron" method="POST">
 		<p><?php echo $errorMessage; ?></p>
 		<label>Username:</label><input type="text" class="form-control" name="username" placeholder="Enter Username">
 		<br>

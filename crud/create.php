@@ -11,11 +11,12 @@
 <?php
 		include 'header.php';
 		include 'crudController.php';
+
+
 ?>
 
 	<form id="myform" action="create.php" method = "POST"  enctype = "multipart/form-data"><br>
 	<input type = "file" name = "file" style = "margin-left: 50%">
-
 	<table cellspacing="0" cellpadding="0"><br><br>
 			<tr>
 				<div>

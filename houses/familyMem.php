@@ -2,46 +2,58 @@
 <html>
 <head>
 	<title></title>
+	<title></title>
 	<link rel="stylesheet" type="text/css" href="../design/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../design/css/mydesign.css">
+	<style type="text/css">
+		.form-control{
+			margin-top: 3%;
+		}
+	</style>
 </head>
 <body>
 
 <?php
-		include '../header.php';
-		require_once '../Brains/db.php'
+include '../Brains/db.php';
+include '../crud/header.php';
+include 'houseHoldController.php';
+
 ?>
 
-	<form id="myform" action=""  method = "POST"><br>
-	<table cellspacing="0" cellpadding="0"><br><br>
-			<tr>
-				<div>
-					<th>First Name:</th>
-					<td><input type="text" class="form-control" name="fname" placeholder="First name"></td>
-				</div>
-			</tr>
-			<tr>
-				<th>Middle Name:</th>
-				<td><input type="text" class="form-control" name="_mname" placeholder="Middle name"></td>
-			</tr>
-			<tr>
-				<th>Last Name:</th>
-				<td><input type="text" class="form-control" name="_lname" placeholder="Last name"></td>
-			</tr>
-			<tr>
-				<th>full name:</th>
-				<td><input type="text" class="form-control" name="fullname" placeholder="full name"></td>
-			</tr>
-			<tr>
-				<th>sex:</th>
-				<td><input type="text" class="form-control" name="sex" placeholder="sex"></td>
-			</tr>
-			<tr>
-				<th>Relation:</th>
-				<td><input type="text" class="form-control" name="relation" placeholder="Relation"></td>
-			</tr>
-		</table><br>
+<div class="container">
+	<form class="form" style="margin-top: 5%" action="familyMem.php" method="POST">
+		<br>
 
+		<div class="form-row">
+    		<div class="col">
+    			<?php
+    			if (count($suggestedPeople) > 0) {
+    				echo '<select class="form-control" name="respondent">';
+    				$count = 0;
+    				while ($count < count($suggestedPeople)) {
+    					echo $count;
+    					echo '<option name="{$suggestedPeople->id}">';
+    					echo $suggestedPeople[$count];
+    					echo "</option>";
+    					$count++;
+    				}
+    				echo "</select>";
+    			}else{
+    				echo '<input autocomplete="off" type="text" class="form-control" name="search_name" placeholder="Search Name">';
+    			}
+    			?>
+				<input type = "text" name = "nice" class = "form-control" placeholder="Relation" >
+
+      			
+    		</div>
+    		<div class="col"><br>
+      			<input type="submit" name="hahaha" class="btn btn-primary" value="Search">
+    		</div>
+  		</div>
+		  <div>
+				<input type="submit" id="search" class="btn btn-primary" style="margin-top: 3%" name="create" value="Save">
+		</div>
 	</form>
+</div>
 </body>
+
 </html>
