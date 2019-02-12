@@ -27,7 +27,7 @@ include 'houseHoldController.php';
     		<div class="col">
     			<?php
     			if (count($suggestedPeople) > 0) {
-    				echo '<select class="form-control" name="respondent">';
+    				echo '<select class="form-control" name="fam_member">';
     				$count = 0;
     				while ($count < count($suggestedPeople)) {
     					echo $count;
@@ -41,16 +41,23 @@ include 'houseHoldController.php';
     				echo '<input autocomplete="off" type="text" class="form-control" name="search_name" placeholder="Search Name">';
     			}
     			?>
-				<input type = "text" name = "nice" class = "form-control" placeholder="Relation" >
-
-      			
+				<label>Position: </label>
+				<?php
+				$result = $db->connection()->query("SELECT * FROM  `family_position` LIMIT 42");
+					echo '<select name="brgy" class="form-control">';
+					while($row = $result->fetch_object()){
+						echo '<option name="'.$row->fam_id.'">'.$row->position.'</option>';
+					}
+					echo '</select>';
+				?>
+						
     		</div>
     		<div class="col"><br>
       			<input type="submit" name="hahaha" class="btn btn-primary" value="Search">
     		</div>
   		</div>
 		  <div>
-				<input type="submit" id="search" class="btn btn-primary" style="margin-top: 3%" name="create" value="Save">
+				<input type="submit" id="search" class="btn btn-primary" style="margin-top: 3%" name="create_member" value="Save">
 		</div>
 	</form>
 </div>

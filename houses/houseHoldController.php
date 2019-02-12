@@ -43,7 +43,7 @@ if(isset($_POST['create'])){
 		echo "latitude require!";
 	}
 	if(isset($_POST['respondent']) && isset($_POST['brgy']) && isset($_POST['Longitude']) && isset($_POST['Latitude'])){
-		echo "hahahaha!";
+		
 		$create_address = $_POST['brgy'];
 		$respondent = $_POST['respondent'];
 		$longitude = $_POST['Longitude'];
@@ -155,7 +155,6 @@ if(isset($_POST['create'])){
 			if($person = $result->fetch_object()){
 				$aaa = $person->id;
 			}
-			//if($db->connection()->query("UPDATE `house` SET `slug` = '0000' WHERE `id`={$aaa} "));
 			echo '<br>'. $aaa .'</br>';
 
 	$createHouseHoldTable = "CREATE TABLE `{$comp->recode($aaa)}` (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, members INT(11) NOT NULL )";
@@ -164,9 +163,9 @@ if(isset($_POST['create'])){
 	$db->connection()->query($createHouseHoldTable);
 	}
 
+}
 
-
-	// if(isset()){
-	// 	echo "aaa";
-	// }
+if(isset($_POST['create_member'])){
+	var_dump($_POST);
+	//echo $_POST['family_member'];
 }
