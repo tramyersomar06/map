@@ -41,9 +41,9 @@ include 'houseHoldController.php';
     				echo '<input autocomplete="off" type="text" class="form-control" name="search_name" placeholder="Search Name">';
     			}
     			?>
-				<label>Position: </label>
+				
 				<?php
-				$result = $db->connection()->query("SELECT * FROM  `family_position` LIMIT 42");
+				$result = $db->connection()->query("SELECT * FROM  `family_position`");
 					echo '<select name="brgy" class="form-control">';
 					while($row = $result->fetch_object()){
 						echo '<option name="'.$row->fam_id.'">'.$row->position.'</option>';
@@ -64,3 +64,4 @@ include 'houseHoldController.php';
 </body>
 
 </html>
+

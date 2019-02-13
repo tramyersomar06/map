@@ -166,6 +166,13 @@ if(isset($_POST['create'])){
 }
 
 if(isset($_POST['create_member'])){
-	var_dump($_POST);
-	//echo $_POST['family_member'];
+	if(!isset($_POST['family_position'])){
+
+		$family = $_POST['family_position'];
+		$query = "INSERT INTO `members` (`relation`) VALUES ('{$family}')";
+		var_dump($query);
+		// echo $query;
+		// $db->connection()->query($query);
+	}
+	
 }

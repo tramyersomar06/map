@@ -40,6 +40,7 @@ $db = new Database();
     </div>
 
     <div id="map"></div>
+    
         <?php
             $query = "SELECT * FROM house WHERE id = {$_GET['id']}";
             $result = $db->connection()->query($query);
@@ -64,8 +65,8 @@ $db = new Database();
               </script>";
                 
         ?>
-
-        <a href="http://localhost/Map/houses/familyMem.php" class="btn btn-secondary">Edit</a>
+            
+       
         <div class="float-left">
             <h3 class="h3">Family Members</h3>
             <?php

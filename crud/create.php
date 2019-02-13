@@ -15,8 +15,7 @@
 
 ?>
 
-	<form id="myform" action="create.php" method = "POST"  enctype = "multipart/form-data"><br>
-	<input type = "file" name = "file" style = "margin-left: 50%">
+	<form id="myform" action="create.php" method = "POST"><br>
 	<table cellspacing="0" cellpadding="0"><br><br>
 			<tr>
 				<div>
