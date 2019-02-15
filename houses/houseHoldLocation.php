@@ -8,14 +8,14 @@
     <link rel="stylesheet" type="text/css" href="../design/css/bootstrap.min.css">
     <title>map system</title>
    
-    <style>
+    <style type="text/css">
 
       #map {
         height: 55%;
         width: 55%;
         margin: auto;
         margin-top: 3%;
-        margin-left: 40%;
+        margin-left: 22%;
       }
       html, body {
         height: 100%;
@@ -32,6 +32,7 @@
     include '../loginController.php';
     if(isset($_GET['id'])){
         $_SESSION['home_id'] = $_GET['id'];
+        $_SESSION['house_name'] = $_GET['slug'];
     }
    
 
@@ -71,22 +72,22 @@ $db = new Database();
                 
         ?>
             
-        <a class="btn btn-primary" id="" href="http://localhost/Map/houses/familyMem.php" style="margin-bottom: 1%">Add</a>
-        <a class="btn btn-secondary" href="#" style="margin-bottom: 1%">Edit</a>
+        <a class="btn btn-primary" href="http://localhost/Map/houses/familyMem.php" style="margin-bottom: 1%;  margin-right: 50%">Add</a>
         <div class="float-left">
             <h3 class="h3">Family Members</h3>
             <div class="container">
 
             <!-- Table start -->
+            
                     <table  class="table">
-                        <thead bgcolor = "#BCD6F2">
+                        <thead bgcolor = "#BCD6F2" styele = "margin-left:10%">
                             <th style = " width: 15%">Name:</th>
                             <th style = " width: 10%"></th>
                             <th style = " width: 10%"></th>
                             <th style = " width: 10%"></th>
                         </thead>
                         <tbody>
-
+            
 
 
             <?php
@@ -96,7 +97,11 @@ $db = new Database();
             ?>
                             <tr>
                                 <td><?php echo $members->full_name; ?></td>
+                                <td><a href = "updateMember.php?id=<?php echo $members->members ?>&slug=<?php echo $_GET['slug'] ?>" class = "btn btn-secondary">Edit</a></td>
+                                <td><a class = "btn btn-danger">Delete</a></td>
                             </tr>
+
+                           
                 </div>
             <?php
              }
