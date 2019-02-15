@@ -1,7 +1,7 @@
 <?php
 require 'Brains/db.php';
 session_start();
-$database = new Database();
+$db = new Database();
 
 $errorMessage = "";
 
@@ -14,7 +14,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 		$errorMessage = "Password required!";
 	}else{
 		$query = "SELECT * FROM admin_tbl";
-		$result = $database->connection()->query($query);
+		$result = $db->connection()->query($query);
 		while ($row = $result->fetch_object()) {
 			if ($_POST['username'] == $row->username && md5($_POST['password']) == $row->password) {
 				header('location:index.php');

@@ -13,7 +13,7 @@
 <body>
 
 <?php
-include '../Brains/db.php';
+include '../loginController.php';
 include '../crud/header.php';
 include 'houseHoldController.php';
 
@@ -30,7 +30,6 @@ include 'houseHoldController.php';
     				echo '<select class="form-control" name="fam_member">';
     				$count = 0;
     				while ($count < count($suggestedPeople)) {
-    					echo $count;
     					echo '<option name="{$suggestedPeople->id}">';
     					echo $suggestedPeople[$count];
     					echo "</option>";
@@ -44,7 +43,7 @@ include 'houseHoldController.php';
 				
 				<?php
 				$result = $db->connection()->query("SELECT * FROM  `family_position`");
-					echo '<select name="brgy" class="form-control">';
+					echo '<select name="relation" class="form-control">';
 					while($row = $result->fetch_object()){
 						echo '<option name="'.$row->fam_id.'">'.$row->position.'</option>';
 					}

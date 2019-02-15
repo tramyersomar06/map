@@ -29,6 +29,12 @@ $people = $db->connection()->query('SELECT * FROM `people` LIMIT 10');
 		text-align: center;
 
 	}
+    body{
+
+background-image:url("../HTML/city.jpg");
+background-size: cover;
+background-attachment: fixed;
+}
 
 </style>
 </head>

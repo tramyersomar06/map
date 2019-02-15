@@ -165,14 +165,25 @@ if(isset($_POST['create'])){
 
 }
 
-if(isset($_POST['create_member'])){
-	if(!isset($_POST['family_position'])){
 
-		$family = $_POST['family_position'];
-		$query = "INSERT INTO `members` (`relation`) VALUES ('{$family}')";
-		var_dump($query);
-		// echo $query;
-		// $db->connection()->query($query);
+if(isset($_POST['create_member'])){
+	if(!isset($_POST['fam_member'])){
+		echo "family member require!";
 	}
+	$editThisId = null;
+
+		$members = $_POST['fam_member'];
+		// var_dump($_SESSION).'<br>';
+		// var_dump($_POST);
 	
-}
+	$people = $db->connection()->query("SELECT * FROM  `people` WHERE `full_name` = '{$_POST['fam_member']}'");
+	if($result = $people->fetch_object()){
+		$editThisId = $result->people_id;
+	}
+
+		$query = "INSERT INTO `{$_SESSION['aaa']}` (`members`) VALUES ({$editThisId})";
+		if($db->connection()->query($query)){
+			header('location: houseHoldLocation.php');
+		}
+		
+	}

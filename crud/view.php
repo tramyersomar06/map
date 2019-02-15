@@ -1,7 +1,6 @@
 <?php 
 
-include '../Brains/db.php';
-$db = new Database();
+include '../loginController.php';
 echo $_GET['student_id'];
 $people = $db->connection()->query('SELECT * FROM `people` WHERE `people_id` = '.$_GET['student_id'].' ' );
 $selected_person = $people->fetch_object();
@@ -18,6 +17,7 @@ $selected_person = $people->fetch_object();
 
 	<?php 
 	include 'header.php';
+	var_dump($_SESSION);
 	?>
 	<br>
 	<center><div style="text-align: center;"><h2>  </h2></div></center>

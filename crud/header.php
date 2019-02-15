@@ -1,6 +1,6 @@
 <div class="sticky-top">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a class="navbar-brand" href="#" style="margin: auto;"><h2><center>Local Disaster Risk Reduction Management</center></h2><h6><center>(Online Database for Disaster Response with Map Support)</center><h6></a>
+<a class="navbar-brand" href="#" style="margin: auto;"><h2><center>Local Disaster Risk Reduction and Management</center></h2><h6><center>(Online Database for Disaster Response with Map Support)</center><h6></a>
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -12,12 +12,11 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
        <li class="nav-item active">
         <a class="nav-link" href="http://localhost/Map/index.php">Home <span class="sr-only">(current)</span></a>
-     
-      <li class="nav-item active">
-        <a class="nav-link" href="http://localhost/Map/houses/houseHoldList.php">Households<span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost/Map/crud/informationPage.php">Register<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost/Map/houses/houseHoldList.php">Households<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="../loginController.php?logout=1">Logout<span class="sr-only">(current)</span></a>

@@ -12,10 +12,10 @@
 
       #map {
         height: 55%;
-        width: 45%;
+        width: 55%;
         margin: auto;
         margin-top: 3%;
-        margin-left: 45%;
+        margin-left: 40%;
       }
       html, body {
         height: 100%;
@@ -29,7 +29,12 @@
 <body>
 <?php
     include '../crud/header.php';
-    include '../Brains/db.php';
+    include '../loginController.php';
+    if(isset($_GET['id'])){
+        $_SESSION['home_id'] = $_GET['id'];
+    }
+   
+
 $db = new Database();
 
 ?>
@@ -42,7 +47,7 @@ $db = new Database();
     <div id="map"></div>
     
         <?php
-            $query = "SELECT * FROM house WHERE id = {$_GET['id']}";
+            $query = "SELECT * FROM house WHERE id = {$_SESSION['home_id']}";
             $result = $db->connection()->query($query);
             if($map = $result->fetch_object()){
                 $long = $map->longitude;
@@ -66,21 +71,56 @@ $db = new Database();
                 
         ?>
             
-       
+        <a class="btn btn-primary" id="" href="http://localhost/Map/houses/familyMem.php" style="margin-bottom: 1%">Add</a>
+        <a class="btn btn-secondary" href="#" style="margin-bottom: 1%">Edit</a>
         <div class="float-left">
             <h3 class="h3">Family Members</h3>
+            <div class="container">
+
+            <!-- Table start -->
+                    <table  class="table">
+                        <thead bgcolor = "#BCD6F2">
+                            <th style = " width: 15%">Name:</th>
+                            <th style = " width: 10%"></th>
+                            <th style = " width: 10%"></th>
+                            <th style = " width: 10%"></th>
+                        </thead>
+                        <tbody>
+
+
+
             <?php
             $query2 = "SELECT * FROM `{$house}` JOIN `people` ON `{$house}`.`members` = `people`.`people_id`";
             $result2 = $db->connection()->query($query2);
                 while($members = $result2->fetch_object()){
-                    echo $members->full_name,'<br>';
-                }
+            ?>
+                            <tr>
+                                <td><?php echo $members->full_name; ?></td>
+                            </tr>
+                </div>
+            <?php
+             }
             }
             ?>
+                    <!-- table continuation -->
+                        </tbody>
+                    </table>
+
+
         </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVwmJw-KmDmkNjYNuAfBheDGDZuLwA1HY
     &callback=initMap"
     async defer></script>
+
+    <form >
+
+</div>
+<div>
+	
+	<div class="container-fluid" style="width: 90%">
+	<div class="table-responsive">
+	
+
 </body>
 </html>
