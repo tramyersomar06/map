@@ -13,7 +13,7 @@
 <body>
 
 <?php
-include '../Brains/db.php';
+// include '../Brains/db.php';
 include '../crud/header.php';
 include 'houseHoldController.php';
 

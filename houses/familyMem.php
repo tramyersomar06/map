@@ -13,7 +13,7 @@
 <body>
 
 <?php
-include '../loginController.php';
+// include '../loginController.php';
 include '../crud/header.php';
 include 'houseHoldController.php';
 
@@ -31,7 +31,7 @@ include 'houseHoldController.php';
     				$count = 0;
     				while ($count < count($suggestedPeople)) {
     					echo '<option name="{$suggestedPeople->id}">';
-    					echo $suggestedPeople[$count];
+    					echo $suggestedPeople[$count].' : '.$suggestedPeople->id;
     					echo "</option>";
     					$count++;
     				}

@@ -11,7 +11,7 @@
 	<style type = "text/css">
 	body{
 
-		background-image:url("HTML/images.jpg");
+		background-image:url("HTML/bg blue.jpeg");
 		background-size: cover;
 		background-attachment: fixed;
 	}
@@ -35,7 +35,7 @@
 </head>
 <body>
 <?php include 'header.php'; ?>
-	<div class ="content">
+	<div class ="content" style = "width:70%">
 		<p>Curious which components explicitly require jQuery, our JS, and Popper.js? Click the show components link below. If you’re at all unsure about the general page structure, keep reading for an example page template.
 
 Our bootstrap.bundle.js and bootstrap.bundle.min.js include Popper, but not jQuery. For more information about what’s included in Bootstrap, please see our contents section.

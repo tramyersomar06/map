@@ -72,23 +72,23 @@ $db = new Database();
                 
         ?>
             
-        <a class="btn btn-primary" href="http://localhost/Map/houses/familyMem.php" style="margin-bottom: 1%;  margin-right: 50%">Add</a>
-        <div class="float-left">
-            <h3 class="h3">Family Members</h3>
-            <div class="container">
+        
 
             <!-- Table start -->
             
-                    <table  class="table">
+                   <div class="container"><br><br>
+                   <a class="btn btn-primary" href="http://localhost/Map/houses/familyMem.php" style="margin-bottom: 1%">Add</a>
+                   <table  class="table">
                         <thead bgcolor = "#BCD6F2" styele = "margin-left:10%">
-                            <th style = " width: 15%">Name:</th>
+                            <th style = " width: 15%">Family Members:</th>
                             <th style = " width: 10%"></th>
                             <th style = " width: 10%"></th>
                             <th style = " width: 10%"></th>
                         </thead>
                         <tbody>
-            
-
+        
+                   
+                   </div>
 
             <?php
             $query2 = "SELECT * FROM `{$house}` JOIN `people` ON `{$house}`.`members` = `people`.`people_id`";
@@ -98,7 +98,7 @@ $db = new Database();
                             <tr>
                                 <td><?php echo $members->full_name; ?></td>
                                 <td><a href = "updateMember.php?id=<?php echo $members->members ?>&slug=<?php echo $_GET['slug'] ?>" class = "btn btn-secondary">Edit</a></td>
-                                <td><a class = "btn btn-danger">Delete</a></td>
+                                <td><a href = "houseHoldController.php?id=<?php echo $members->members ?>" class = "btn btn-danger" name = "DeleteMe">Delete</a></td>
                             </tr>
 
                            

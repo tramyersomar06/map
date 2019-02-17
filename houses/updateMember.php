@@ -14,59 +14,65 @@
 </head>
 <body>
 <?php
+    //include '../Brains/db.php';
     include '../crud/header.php';
-    include '../loginController.php';
     include 'houseHoldController.php';
 ?>
 
 <?php 
     
-   $query = "SELECT * FROM `{$_GET['slug']}` JOIN people ON `{$_GET['slug']}`.members = people.people_id WHERE id = {$_GET['id']}";
-   $result = $db->connection()->query($query);
-        if($MemUp =  $result->fetch_object()){
-            
-     }
-
+    var_dump($_SESSION);
+   if(isset($_GET['slug'])){
+    $_SESSION['human_id'] = $_GET['id'];
+    $query = "SELECT * FROM `{$_GET['slug']}` JOIN people ON `{$_GET['slug']}`.members = people.people_id WHERE `{$_GET['slug']}`.members = {$_GET['id']}";
+    $result = $db->connection()->query($query);
+         if($MemUp =  $result->fetch_object()){
+             
+             
+      }
+   }
 ?>
         <div class="container">
-        <form class="form" style="margin-top: 5%" action="createHouses.php" method="POST">
+        <form class="form" style="margin-top: 5%" action="updateMember.php" method="POST">
 		<br>
 
 		<div class="form-row">
     		<div class="col">
     			<?php
     			if (count($suggestedPeople) > 0) {
-    				echo '<select class="form-control" name="respondent">';
+    				echo '<select class="form-control" name="people_name">';
     				$count = 0;
     				while ($count < count($suggestedPeople)) {
     					echo $count;
-    					echo '<option name="{$suggestedPeople->id}">';
+    					echo '<option name="people">';
     					echo $suggestedPeople[$count];
     					echo "</option>";
     					$count++;
     				}
     				echo "</select>";
     			}else{
-                    echo '<input autocomplete="off" type="text" class="form-control" name="search_name" placeholder="Search Name">';
+                   if(isset($_GET['id'])){
                     $query = "SELECT * FROM `{$_SESSION['house_name']}` JOIN people ON `{$_SESSION['house_name']}`.members = people.people_id WHERE members = {$_GET['id']}";
                     $mem = $db->connection()->query($query);
                     if($up = $mem->fetch_object()){
-                    var_dump($up);
-                     }
+                        echo '<input autocomplete="off" type="text" class="form-control" name="search_name" value = "'.$up->full_name.'" placeholder="Search Name">';
+                        }
+                    }else{
+                        echo '<input autocomplete="off" type="text" class="form-control" name="search_name" placeholder="Search Name">';
+                    }
     			}
     			?>
       			
     		</div>
     		<div class="col"><br>
       			<input type="submit" name="hahaha" class="btn btn-primary" value="Search">
-				<input type="submit" id="search" class="btn btn-primary"   name="create" value="Save">	
+				<input type="submit" id="search" name = "create_member" class="btn btn-primary"   name="create" value="Save">	
 		</div>
 	</form>
 </div>
     <?php 
     
          
-
     ?>
 
 </body>

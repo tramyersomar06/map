@@ -23,8 +23,7 @@ background-attachment: fixed;
 ?>
     <div class="container" style="padding-top: 2%">
         <table class="table table-bordered">
-        <center><h3> Households<h3></center>
-        <thead>
+        <thead bgcolor = "#BCD6F2">
             <th>Household No.</th>
             <th>Respondent</th>
             <th>Place</th>

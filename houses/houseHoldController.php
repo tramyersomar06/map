@@ -1,5 +1,5 @@
 <?php 
-require_once'../Brains/db.php';
+include	'../loginController.php';
 include '../Brains/numComplete.php';
 $db = new Database();
 $comp = new NumComp();
@@ -167,23 +167,21 @@ if(isset($_POST['create'])){
 
 
 if(isset($_POST['create_member'])){
-	if(!isset($_POST['fam_member'])){
-		echo "family member require!";
-	}
-	$editThisId = null;
-
-		$members = $_POST['fam_member'];
-		// var_dump($_SESSION).'<br>';
-		// var_dump($_POST);
 	
-	$people = $db->connection()->query("SELECT * FROM  `people` WHERE `full_name` = '{$_POST['fam_member']}'");
+	$people = $db->connection()->query("SELECT * FROM  `people` WHERE `full_name` = '{$_POST['people_name']}'");
 	if($result = $people->fetch_object()){
-		$editThisId = $result->people_id;
+		echo $editThisId = $result->people_id;
 	}
 
-		$query = "INSERT INTO `{$_SESSION['aaa']}` (`members`) VALUES ({$editThisId})";
+	$query = "UPDATE `{$_SESSION['house_name']}` SET `members` = {$editThisId} WHERE `members`= {$_SESSION['human_id']}";
 		if($db->connection()->query($query)){
 			header('location: houseHoldLocation.php');
 		}
 		
-	}
+}
+
+if(isset($_GET['DeleteMe'])){
+	echo "delete me";
+}
+
+	
