@@ -25,7 +25,7 @@ if (!isset($_SESSION['hash'])) {
 
 body{
 
-background-image:url("HTML/team.png");
+background-image:url("HTML/cath.jpg");
 background-size: cover;
 background-attachment: fixed;
 }

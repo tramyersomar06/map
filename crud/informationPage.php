@@ -29,6 +29,7 @@ $people = $db->connection()->query('SELECT * FROM `people` LIMIT 10');
 		text-align: center;
 
 	}
+
     body{
 
 background-image:url("../HTML/city.jpg");
@@ -50,16 +51,17 @@ background-attachment: fixed;
 </div>
 <div>
 	
-	<div class="container-fluid" style="width: 90%">
-	
+	<div class="container-fluid" style="width: 80%">
 	<div class="table-responsive">
-	<table  class="table table-bordered"><br>
-		<div style="text-align: center;"><h2></h2></div><br>
-		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%">insert</a>
+	<table  class="table table-bordered">
+		<div style="text-align: center;"></div><br>
+		<a href = "http://localhost/Map/index.php" class = "btn btn-secondary" style = "margin-bottom: 1%;margin-right: 1%" >Back </a>
+		<a class="btn btn-primary" id="" href="http://localhost/Map/crud/create.php" style="margin-bottom: 1%;margin-right: 1%">Create</a>
+		<a title = "print screen" alt = "print screen " class = "btn btn-success" onclick = "window.print();"target="_blank" style ="cursor:pointer;margin-bottom: 1%;" >Print</a>
 		
-	</div>
+	
 
-		<thead bgcolor = "#BCD6F2">
+		<thead bgcolor = "#BCD6F2" autocomplete="off">
 			<th style = " width: 15%">First Name</th>
 			<th style = " width: 20%">Middle Name</th>
 			<th style = " width: 15%">Last Name</th>
@@ -70,6 +72,7 @@ background-attachment: fixed;
 			
 			
 		</thead>
+		</div>
 		<tbody style="text-align: center;">
 			<?php
 			

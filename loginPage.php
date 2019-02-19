@@ -12,7 +12,7 @@
 
 	<style type="text/css">
 		body{
-			background: url(HTML/ldrrm.png);
+			background: url(HTML/hahaha.jpg);
 			height: 100vh;
 			background-size: cover;
 			background-position: center;
@@ -23,10 +23,13 @@
 			margin: auto;, auto, auto, auto;
 			margin-top: 3%;
 			margin-right: 60%;
+			
 		}
 	
 	</style><br><br>
-	<form autocomplete="off" action="loginPage.php" class = "jumbotron" method="POST">
+	
+	<form autocomplete="off" style = "padding-top: 1%; padding-bottom: 2%" action="loginPage.php" class = "jumbotron" method="POST">
+	<img src="HTML/log.png" alt="image"  style = "width: 30%;margin-left: 35%">
 		<p><?php echo $errorMessage; ?></p>
 		<label>Username:</label><input type="text" class="form-control" name="username" placeholder="Enter Username">
 		<br>

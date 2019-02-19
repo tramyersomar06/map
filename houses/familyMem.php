@@ -20,18 +20,19 @@ include 'houseHoldController.php';
 ?>
 
 <div class="container">
-	<form class="form" style="margin-top: 5%" action="familyMem.php" method="POST">
+	<form class="jumbotron" style="margin-top: 5%; width: 50%; padding-top: 3%" action="familyMem.php" method="POST">
 		<br>
 
 		<div class="form-row">
     		<div class="col">
+			<label>Family Name:</label>
     			<?php
     			if (count($suggestedPeople) > 0) {
-    				echo '<select class="form-control" name="fam_member">';
+    				echo '<select class="form-control" name="people_name">';
     				$count = 0;
     				while ($count < count($suggestedPeople)) {
     					echo '<option name="{$suggestedPeople->id}">';
-    					echo $suggestedPeople[$count].' : '.$suggestedPeople->id;
+    					echo $suggestedPeople[$count];
     					echo "</option>";
     					$count++;
     				}
@@ -41,23 +42,22 @@ include 'houseHoldController.php';
     			}
     			?>
 				
-				<?php
+				<!-- <?php
 				$result = $db->connection()->query("SELECT * FROM  `family_position`");
 					echo '<select name="relation" class="form-control">';
 					while($row = $result->fetch_object()){
 						echo '<option name="'.$row->fam_id.'">'.$row->position.'</option>';
 					}
 					echo '</select>';
-				?>
-						
+				?> -->
+					<br>	
+					<input type="submit" style = "margin-right: 5%" name="hahaha" class="btn btn-primary" value="Search">
+					<input type="submit" id="search" class="btn btn-primary"  name="create_member" value="Save">
+					<a href = "houseHoldLocation.php" class = "btn btn-secondary" style = "margin-left: 50%" >Back </a>
     		</div>
-    		<div class="col"><br>
-      			<input type="submit" name="hahaha" class="btn btn-primary" value="Search">
-    		</div>
+    		
   		</div>
-		  <div>
-				<input type="submit" id="search" class="btn btn-primary" style="margin-top: 3%" name="create_member" value="Save">
-		</div>
+		  
 	</form>
 </div>
 </body>

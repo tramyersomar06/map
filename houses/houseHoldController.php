@@ -167,21 +167,34 @@ if(isset($_POST['create'])){
 
 
 if(isset($_POST['create_member'])){
+
 	
 	$people = $db->connection()->query("SELECT * FROM  `people` WHERE `full_name` = '{$_POST['people_name']}'");
 	if($result = $people->fetch_object()){
-		echo $editThisId = $result->people_id;
+		$editThisId = $result->people_id;
 	}
 
-	$query = "UPDATE `{$_SESSION['house_name']}` SET `members` = {$editThisId} WHERE `members`= {$_SESSION['human_id']}";
+	if(isset($_SESSION['human_id'])){
+		$query = "UPDATE `{$_SESSION['house_name']}` SET `members` = {$editThisId} WHERE `members`= {$_SESSION['human_id']}";
 		if($db->connection()->query($query)){
 			header('location: houseHoldLocation.php');
 		}
-		
+	}
+	
+	$query = "INSERT INTO `{$_SESSION['house_name']}` (`members`) VALUES ({$editThisId})";
+	if($db->connection()->query($query)){
+		header('location: houseHoldLocation.php');
+	}
+
+	
 }
 
-if(isset($_GET['DeleteMe'])){
-	echo "delete me";
+
+if(isset($_GET['deleteId'])){
+$delete = "DELETE FROM `{$_SESSION['house_name']}` WHERE id = {$_GET['deleteId']}";
+	if($db->connection()->query($delete)){
+		header('location: houseHoldLocation.php');
+	}
 }
 
 	

@@ -29,10 +29,10 @@ background-attachment: fixed;
             <th>Place</th>
             <th></th>
            
-            <a class="btn btn-primary" id="" href="http://localhost/Map/houses/createHouses.php" style="margin-bottom: 1%">Add</a>
-		   
-
-
+            <a href = "http://localhost/Map/index.php" class = "btn btn-secondary" style = "margin-bottom: 1%;margin-right: 1%" >Back </a>
+            <a class="btn btn-primary" id="" href="createHouses.php" style="margin-bottom: 1%; margin-right: 1%">Add</a>
+            <a title = "print screen" alt = "print screen " class = "btn btn-success" onclick = "window.print();"target="_blank" style ="cursor:pointer;margin-bottom: 1%">Print</a>
+        
             <th></th>
         </thead>
         <tbody>

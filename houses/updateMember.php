@@ -21,10 +21,9 @@
 
 <?php 
     
-    var_dump($_SESSION);
    if(isset($_GET['slug'])){
     $_SESSION['human_id'] = $_GET['id'];
-    $query = "SELECT * FROM `{$_GET['slug']}` JOIN people ON `{$_GET['slug']}`.members = people.people_id WHERE `{$_GET['slug']}`.members = {$_GET['id']}";
+    $query = "SELECT * FROM `{$_GET['slug']}` JOIN people ON `{$_GET['slug']}`.members = people.people_id WHERE id = {$_GET['id']}";
     $result = $db->connection()->query($query);
          if($MemUp =  $result->fetch_object()){
              
@@ -33,7 +32,7 @@
    }
 ?>
         <div class="container">
-        <form class="form" style="margin-top: 5%" action="updateMember.php" method="POST">
+        <form class="jumbotron" style="margin-top: 5%; width: 60%" action="updateMember.php" method="POST">
 		<br>
 
 		<div class="form-row">
@@ -62,12 +61,15 @@
                     }
     			}
     			?>
+
+                <div class="col"><br>
+      			<input type="submit" name="hahaha" style = "margin-right: 5%" class="btn btn-primary" value="Search">
+				<input type="submit" id="search" name = "create_member" class="btn btn-primary"   name="create" value="Save">
+                <a href = "houseHoldLocation.php" class = "btn btn-secondary" style = "margin-left: 50%" >Back </a>	
+		</div>
       			
     		</div>
-    		<div class="col"><br>
-      			<input type="submit" name="hahaha" class="btn btn-primary" value="Search">
-				<input type="submit" id="search" name = "create_member" class="btn btn-primary"   name="create" value="Save">	
-		</div>
+    		
 	</form>
 </div>
     <?php 

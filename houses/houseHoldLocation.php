@@ -22,7 +22,12 @@
         margin: 0;
         padding: 0;
       }
-      
+        body{
+
+        background-image:url("../HTML/city.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+}
 
     </style>
 </head>
@@ -39,45 +44,47 @@
 $db = new Database();
 
 ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm"></div>
+           
+            <div id="map"></div>
+    
+            <?php
+                $query = "SELECT * FROM house WHERE id = {$_SESSION['home_id']}";
+                $result = $db->connection()->query($query);
+                if($map = $result->fetch_object()){
+                    $long = $map->longitude;
+                    $lat = $map->latitude;
+                    $house = $map->slug;
+                    
+                    echo "<script>
+                    var map;
+                    function initMap() {
+                    var option = {
+                        zoom:15,
+                        center:{lat:{$lat}, lng:{$long}}
+                    }
+                    var map = new google.maps.Map(document.getElementById('map'), option);
+                    var marker = new google.maps.Marker({
+                        position:{lat:{$lat}, lng:{$long}},
+                        map:map
+                    });
+                    }
+                </script>";
+                    
+            ?>
+            </div>
         </div>
     </div>
 
-    <div id="map"></div>
     
-        <?php
-            $query = "SELECT * FROM house WHERE id = {$_SESSION['home_id']}";
-            $result = $db->connection()->query($query);
-            if($map = $result->fetch_object()){
-                $long = $map->longitude;
-                $lat = $map->latitude;
-                $house = $map->slug;
-                
-                echo "<script>
-                var map;
-                function initMap() {
-                  var option = {
-                      zoom:15,
-                      center:{lat:{$lat}, lng:{$long}}
-                  }
-                  var map = new google.maps.Map(document.getElementById('map'), option);
-                  var marker = new google.maps.Marker({
-                      position:{lat:{$lat}, lng:{$long}},
-                      map:map
-                  });
-                }
-              </script>";
-                
-        ?>
             
         
 
             <!-- Table start -->
-            
-                   <div class="container"><br><br>
-                   <a class="btn btn-primary" href="http://localhost/Map/houses/familyMem.php" style="margin-bottom: 1%">Add</a>
+            <div class="container"><br><br>
+                  <a href = "houseHoldList.php" class = "btn btn-secondary" style = "margin-bottom: 1%;margin-right:1%" >Back </a>   
+                   <a class="btn btn-primary" href="http://localhost/Map/houses/familyMem.php" style="margin-bottom: 1%; margin-right: 1%">Add</a>
+                   <a title = "print screen" alt = "print screen " class = "btn btn-success" onclick = "window.print();"target="_blank" style ="cursor:pointer;margin-bottom: 1%;" >Print</a>
+                   
                    <table  class="table">
                         <thead bgcolor = "#BCD6F2" styele = "margin-left:10%">
                             <th style = " width: 15%">Family Members:</th>
@@ -97,8 +104,7 @@ $db = new Database();
             ?>
                             <tr>
                                 <td><?php echo $members->full_name; ?></td>
-                                <td><a href = "updateMember.php?id=<?php echo $members->members ?>&slug=<?php echo $_GET['slug'] ?>" class = "btn btn-secondary">Edit</a></td>
-                                <td><a href = "houseHoldController.php?id=<?php echo $members->members ?>" class = "btn btn-danger" name = "DeleteMe">Delete</a></td>
+                                <td><a href = "houseHoldController.php?deleteId=<?php echo $members->id ?>" class = "btn btn-danger" name = "DeleteMe">Delete</a></td>
                             </tr>
 
                            
@@ -118,14 +124,9 @@ $db = new Database();
     &callback=initMap"
     async defer></script>
 
-    <form >
+   
 
 </div>
-<div>
-	
-	<div class="container-fluid" style="width: 90%">
-	<div class="table-responsive">
-	
 
 </body>
 </html>
