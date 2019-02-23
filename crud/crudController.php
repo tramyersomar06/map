@@ -32,7 +32,8 @@ if (isset($_POST['_firstname']) || isset($_POST['_middlename']) || isset($_POST[
 		$fullname = $create_firstname.' '.$create_middlename.' '.$crreate_lastname;
 		$add = "INSERT INTO people (`f_name`, `m_name`, `l_name`, `full_name` ) VALUES ('{$create_firstname}', '{$create_middlename}', '{$crreate_lastname}', '{$fullname}')";
 		$insertThis = $dtbs->connection()->query($add);
-		header("location:informationPage.php");
+		$notif = 1;
+		header("location:informationPage.php?notif={$notif}");
 	}
 }
 if (isset($_GET['student_id'])) {

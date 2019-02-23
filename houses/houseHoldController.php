@@ -29,7 +29,6 @@ if (isset($_POST['search_name'])) {
 			array_push($suggestedPeople, $mainResult->full_name);
 		}
 	}
-	
 }
 
 if(isset($_POST['create'])){
@@ -48,6 +47,7 @@ if(isset($_POST['create'])){
 		$respondent = $_POST['respondent'];
 		$longitude = $_POST['Longitude'];
 		$latitude = $_POST['Latitude'];
+
 
 		$finalAddress = 0;
 		if ($create_address == 'Ariman') {
@@ -145,21 +145,23 @@ if(isset($_POST['create'])){
 		}
 
 		$query = "INSERT INTO `house` (`longitude`, `latitude`, `brgy`, `respondent`) VALUES ('{$longitude}', '{$latitude}', '{$finalAddress}', {$peopleNum})";
-		echo $query;
+		// echo $query;
 		$db->connection()->query($query);
+		echo "<script>alert('Data Saved!')</script>";
+
 
 		$aaa = 0;
 		$select_person = "SELECT * FROM `house` WHERE `respondent` = {$peopleNum}";
-		echo '<br>'. $select_person;
+		// echo '<br>'. $select_person;
 			$result = $db->connection()->query($select_person);
 			if($person = $result->fetch_object()){
 				$aaa = $person->id;
 			}
-			echo '<br>'. $aaa .'</br>';
+			// echo '<br>'. $aaa .'</br>';
 
 	$createHouseHoldTable = "CREATE TABLE `{$comp->recode($aaa)}` (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, members INT(11) NOT NULL )";
 	$db->connection()->query("UPDATE `house` SET `slug` = '{$comp->recode($aaa)}' WHERE `id`={$aaa} ");
-	echo $createHouseHoldTable;
+	// echo $createHouseHoldTable;
 	$db->connection()->query($createHouseHoldTable);
 	}
 

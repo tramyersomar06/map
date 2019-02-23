@@ -60,6 +60,9 @@ $people = $db->connection()->query('SELECT * FROM `people` LIMIT 20');
 
 	<?php 
 		include 'header.php';
+		if(isset($_GET['notif']) && $_GET['notif'] == 1){
+			echo "<script>alert('Data registered!')</script>";
+		}
 	?>
 
 	
