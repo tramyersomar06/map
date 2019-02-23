@@ -5,6 +5,14 @@
 	<link rel="stylesheet" type="text/css" href="../design/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../design/css/mydesign.css">
 
+	<style type = "text/css">
+        body{
+
+		background-image:url("../HTML/hehe.jpg");
+		background-size: cover;
+		background-attachment: fixed;
+}
+    </style>
 	
 </head>
 <body>
@@ -14,7 +22,7 @@
 		include 'crudController.php';
 ?>
 
-	<form autocomplete="off" id="myform" action="create.php" class = "jumbotron" method = "POST" style ="width: 30%; margin-top: 2%; padding-top:2%; padding-bottom:4%" ><br>
+	<form autocomplete="off" id="myform" action="create.php" class = "jumbotron" method = "POST" style ="width: 30%; margin-top: 3%; padding-top:2%; padding-bottom:4%" ><br>
 	
 			<tr>
 				<div>

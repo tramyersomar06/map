@@ -36,7 +36,7 @@
 		<label>Password:</label><input type="password" class="form-control" name="password" placeholder="Enter Password">
 		<br>
 		<input type="submit" class="btn btn-primary" name="login" value="Login">
-		<a align="right" class="nav-link" href="../Map/forgotpass.php".php>Forgot Password?<span class="sr-only">(current)</span></a>
+		<a align="right" class="nav-link" name = "fogotpassword" href="../Map/forgotpass.php">Forgot Password?<span class="sr-only">(current)</span></a>
         
 	</form>
 </body>

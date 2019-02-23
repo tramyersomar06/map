@@ -10,10 +10,28 @@
     <style type = "text/css">
         body{
 
-background-image:url("../HTML/city.jpg");
-background-size: cover;
-background-attachment: fixed;
+            background-image:url("../HTML/white.jpg");
+            background-size: cover;
+            background-attachment: fixed;
 }
+        a{
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+
+		}
+
+	    a:hover {
+		
+		    color: black;
+	}
+	    .next {
+            background-color: #4CAF50;
+            color: white;
+}
+
+	
+
     </style>
 </head>
 <body>
@@ -51,6 +69,13 @@ background-attachment: fixed;
         ?>
         </tbody>
         </table>
+                 <form>
+                 <center><div >
+					<a href="#" style = "margin-right: 3%" class="previous">&laquo; Previous</a>
+					<a href="#" class="next">Next &raquo;</a>
+		            </div></center><br><br>
+                 </form>
+
     </div>
     
 </body>

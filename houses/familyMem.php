@@ -8,6 +8,13 @@
 		.form-control{
 			margin-top: 3%;
 		}
+		body{
+			background-image:url("../HTML/lalala.jpg");
+			background-size: cover;
+			background-attachment: fixed;
+	}
+
+
 	</style>
 </head>
 <body>

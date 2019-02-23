@@ -3,7 +3,7 @@ session_start();
 include '../Brains/db.php'; 
 $db = new Database();
 
-$people = $db->connection()->query('SELECT * FROM `people` LIMIT 10');
+$people = $db->connection()->query('SELECT * FROM `people` LIMIT 20');
 
 
 ?>
@@ -31,18 +31,35 @@ $people = $db->connection()->query('SELECT * FROM `people` LIMIT 10');
 	}
 
     body{
-
-background-image:url("../HTML/city.jpg");
-background-size: cover;
-background-attachment: fixed;
+		background-image:url("../HTML/city.jpg");
+		background-size: cover;
+		background-attachment: fixed;
 }
+
+	a{
+		text-decoration: none;
+		display: inline-block;
+		padding: 8px 16px;
+
+		}
+
+	a:hover {
+		
+		color: black;
+	}
+	.next {
+		background-color: #4CAF50;
+		color: white;
+}
+
+	
 
 </style>
 </head>
 <body>
 
 	<?php 
-	require_once 'header.php';
+		include 'header.php';
 	?>
 
 	
@@ -67,8 +84,7 @@ background-attachment: fixed;
 			<th style = " width: 15%">Last Name</th>
 			<th style = " width: 10%"></th>
 			<th style = " width: 10%"></th>
-			<th style = " width: 10%"></th>
-
+			<!-- <th style = " width: 10%"></th> -->
 			
 			
 		</thead>
@@ -82,17 +98,19 @@ background-attachment: fixed;
 				echo "<td>". $rows->m_name ."</td>";
 				echo "<td>". $rows->l_name ."</td>";
 				
-				echo "<td><a class=\"btn btn-success\" href=\"view.php?student_id={$rows->people_id}\">View</a></td>";
+				// echo "<td><a class=\"btn btn-success\" href=\"view.php?student_id={$rows->people_id}\">View</a></td>";
 				echo "<td><a class=\"btn btn-info\" href=\"update.php?student_id={$rows->people_id}\">Edit</a></td>";
 				echo "<td><a class=\"btn btn-danger\" href=\"crudController.php?student_id={$rows->people_id}\">Delete</a></td>";
 				echo "</tr>";
 			}
 			?>
 			
-      	
-
 		</tbody>
 	</table>
+			<center><div >
+					<a href="#" style = "margin-right: 3%" class="previous">&laquo; Previous</a>
+					<a href="#" class="next">Next &raquo;</a>
+		</div></center><br><br>
  	</div>
 	</div>	
 </div>

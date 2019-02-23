@@ -11,11 +11,11 @@
     <style type="text/css">
 
       #map {
-        height: 55%;
-        width: 55%;
+        height: 70%;
+        width: 65%;
         margin: auto;
-        margin-top: 3%;
-        margin-left: 22%;
+        margin-top: 1%;
+        margin-left: 20%;
       }
       html, body {
         height: 100%;
@@ -89,8 +89,7 @@ $db = new Database();
                         <thead bgcolor = "#BCD6F2" styele = "margin-left:10%">
                             <th style = " width: 15%">Family Members:</th>
                             <th style = " width: 10%"></th>
-                            <th style = " width: 10%"></th>
-                            <th style = " width: 10%"></th>
+                           
                         </thead>
                         <tbody>
         

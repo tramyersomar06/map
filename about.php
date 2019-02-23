@@ -17,9 +17,9 @@
 	}
 	.content{
 		background: white;
-		width: 50%;
+		width: 35%;
 		padding: 40px;
-		margin: 100px auto;
+		margin: 50px auto;
 		font-family: calibri;
 	}
 	p{
@@ -36,29 +36,15 @@
 <body>
 <?php include 'header.php'; ?>
 	<div class ="content" style = "width:70%">
-		<p>Curious which components explicitly require jQuery, our JS, and Popper.js? Click the show components link below. If you’re at all unsure about the general page structure, keep reading for an example page template.
+		<BR><p>..........The Department of the Interior and Local Government (DILG) as the vice-chair for Disaster Preparedness has lined up a package of interventions in support of the Local Disaster Risk Reduction and Management Officers (LDRRMOs) nationwide.  The interventions are aimed at enhancing their capacity in effectively performing their duties towards safer, adaptive and resilient communities.
 
-Our bootstrap.bundle.js and bootstrap.bundle.min.js include Popper, but not jQuery. For more information about what’s included in Bootstrap, please see our contents section.
+As a starting point of the capacity development for LDRMMOs, the Local Government Academy (LGA) conducted OPERATION LISTO: LDRRMO CONFERENCE on January 20-22, 2016 at the LGA Training Center in Los Banos, Laguna.  This program was designed to initiate the organization of an LDRRMO Association and the setting-up of a DRR curriculum.  Attendees to the conference were Provincial DRRMOs, DRRMOs from Highly Urbanized Cities, representatives of national government agencies (NGAs), non-government organizations (NGOs) and DILG DRR Focal Persons. A representative from Japan International Cooperation Agency (JICA) also participated in the conference.
 
-Show components requiring JavaScript
-Starter template
-Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:
+During the opening program, DILG Undersecretary Austere A. Panadero posed a challenge to the participants to be open to new knowledge, networking (interoperability) and sharing of local practices.  Usec. Alexander Pama of the National Disaster Risk Reduction and Management Council, on the other hand, congratulated the LDRRMOs for a job well done in dealing with disasters.  He said casualties were lower by half in 2015 compared to 2014, citing better early warning practices and the LISTO manuals as contributory factors to lessen casualties.
 
-Copy
+The 3-day conference served as a platform for NGAs and NGOs like Project NOAH, Manila Observatory, PAGASA, WE SYARE, RESPOND INC. and DILG in sharing their programs, projects and activities in relation to disaster preparedness, response and recovery. Moreover, Mr. Marlon Obligado of the Office of Civil Defense (OCD) highlighted the roles and responsibilities of LDRRMOs in local resilience.  The conference also provided the venue for LDRRMOs to share their good practices and actual experiences on disaster management during the breakout sessions.
 
-
-That’s all you need for overall page requirements. Visit the Layout docs or our official examples to start laying out your site’s content and components.
-
-Important globals
-Bootstrap employs a handful of important global styles and settings that you’ll need to be aware of when using it, all of which are almost exclusively geared towards the normalization of cross browser styles. Let’s dive in.
-
-HTML5 doctype
-Bootstrap requires the use of the HTML5 doctype. Without it, you’ll see some funky incomplete styling, but including it shouldn’t cause any considerable hiccups.
-
-Copy
-<
-Responsive meta tag
-Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your </p>
+Towards the end of the activity, the National Association of LDRRMOs was organized as well as an interim technical working group of the association composed of one (1) representative from each region.  The federation shall embody the “bayanihan” spirit in achieving disaster resiliency working together as a team with a common objective.</p>
 	</div>
 	
 </body>

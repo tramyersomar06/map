@@ -6,6 +6,16 @@
 	<title></title>
 <link rel="stylesheet" type="text/css" href="../design/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../design/css/mydesign.css">
+
+<style type = "text/css">
+        body{
+
+		background-image:url("../HTML/hehehe.jpg");
+		background-size: cover;
+		background-attachment: fixed;
+}
+    </style>
+
 </head>
 <body>
 
@@ -21,7 +31,7 @@
         $result = $ddbb->connection()->query($query);
 
           if($toBeUpdate = $result->fetch_object()){
-              echo '<form id="myform" action="updateController.php" method = "POST">
+              echo '<form id="myform" class = "jumbotron" style ="width: 30%; margin-top: 4%; padding-top: 0%; padding-bottom:2%" action="updateController.php" method = "POST">
                       <table cellspacing="0" cellpadding="0"><br><br>
                         <input type="hidden" name="student_id" value="'.$id.'"/>
                         <tr>
@@ -40,7 +50,7 @@
                         </tr>
                         
                       </table><br>
-                      <td><button type="submit" class="btn btn-primary" style="margin-right: 7%;margin-left: 9%">UPDATE</button></td>
+                      <td><button type="submit" class="btn btn-primary" style="margin-right: 10%;margin-left: 31%">UPDATE</button></td>
                           <td><a href="../crud/informationPage.php"><button type = "button" class="btn btn-secondary">Cancel</button></a></td>
                     </form>';
                     // $_SESSION['id'] = $toBeUpdate->id;

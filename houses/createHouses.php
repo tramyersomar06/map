@@ -8,6 +8,14 @@
 		.form-control{
 			margin-top: 3%;
 		}
+
+        body{
+
+		background-image:url("../HTML/hehehe.jpg");
+		background-size: cover;
+		background-attachment: fixed;
+}
+
 	</style>
 </head>
 <body>
@@ -20,7 +28,7 @@ include 'houseHoldController.php';
 ?>
 
 <div class="container" style = "margin-left:28%">
-	<form class="jumbotron" style="margin-top: 5%; width: 50%; padding:2%" action="createHouses.php"  method="POST">
+	<form class="jumbotron" style="margin-top: 4%; width: 50%; padding:2%" action="createHouses.php"  method="POST">
 		<br>
 
 		<div class="form-row">
@@ -52,8 +60,9 @@ include 'houseHoldController.php';
 					}
 					echo '</select>';
 				?>
-			<input autocomplete="off" class="form-control" type="text" name="Longitude" placeholder="Longitude">
-			<input autocomplete="off" class="form-control" type="text" name="Latitude" placeholder="Latitude"><br>
+			
+			<input autocomplete="off" class="form-control" type="text" name="Latitude" placeholder="Latitude">
+			<input autocomplete="off" class="form-control" type="text" name="Longitude" placeholder="Longitude"><br>
 			<input type="submit" style = "margin-right: 3%" name="hahaha" class="btn btn-primary" value="SEARCH">
 			<input type="submit" id="search" class="btn btn-primary"   name="create" value="Save">
 			<a href = "houseHoldList.php" class = "btn btn-secondary" style = "margin-left: 50%" >Back </a>
