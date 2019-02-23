@@ -38,14 +38,16 @@
 <?php
     include '../Brains/db.php';
     include '../crud/header.php';
-?>
-    <div class="container" style="padding-top: 2%">
-        <table class="table table-bordered">
+?><br>
+    <div class="container" style = "width: 80%">
+        <table class="table table-bordered" style = "text-align: center">
         <thead bgcolor = "#BCD6F2">
-            <th>Household No.</th>
-            <th>Respondent</th>
-            <th>Place</th>
+            <th style = " width: 20%">Household No.</th>
+            <th style = " width: 30%">Respondent</th>
+            <th style = " width: 20%">Place</th>
             <th></th>
+            
+            
            
             <a href = "http://localhost/Map/index.php" class = "btn btn-secondary" style = "margin-bottom: 1%;margin-right: 1%" >Back </a>
             <a class="btn btn-primary" id="" href="createHouses.php" style="margin-bottom: 1%; margin-right: 1%">Add</a>
